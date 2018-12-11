@@ -1,0 +1,100 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Villas Theme</title>
+	<!--Import FontAwesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+	 crossorigin="anonymous">
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+	{{!-- Lightbox --}}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css">
+	<!-- CSS -->
+	<link rel="stylesheet" href="/styles/styles.css" type="text/css">
+	{{!-- favicon --}}
+	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="webclip.png" rel="apple-touch-icon">
+</head>
+
+<body>
+
+	<header>
+
+		<nav class="white valign-wrapper">
+			<div class="container">
+				<a href="#" class="brand-logo blue-text">Villas Theme</a>
+				<a href="#" data-target="menu-mobile" class="sidenav-trigger"><i class="material-icons blue-text">menu</i></a>
+				<ul class="right hide-on-med-and-down ">
+					{{# each navLinks}}
+					<li {{#ifeq ../section key}} class="active" {{else}} {{/ifeq}}>
+						<a href="{{ href }}">{{ label }}</a>
+					</li>
+					{{/each}}
+					<li><a href="#" class="btn round blue waves-effect white-text">+351 999999</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<ul class="sidenav" id="menu-mobile">
+			{{# each navLinks}}
+			<li {{#ifeq ../section key}} class="active" {{else}} {{/ifeq}}>
+				<a href="{{ href }}">{{ label }}</a>
+			</li>
+			{{/each}}
+		</ul>
+
+
+	</header>
+
+	<!-- The content block should contain the body of your template's content-->
+	{{{body}}}
+
+
+	<!-- footer -->
+	<footer>
+		<div class="container center-align">
+			<div class="wrapper-box">
+				<i class="material-icons blue-text">filter_vintage</i>
+				<p><a href="#">Facebook</a></p>
+				<p>Created by <a href="https://www.mashdesign.pt/">MashDesign</a> @Villas Theme with Materialize</p>
+			</div>
+		</div>
+
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			$('.sidenav').sidenav();
+			$('.scrollspy').scrollSpy();
+			$('.slider').slider();
+			$('#carouselHome.carousel-slider').carousel({
+				fullWidth: true,
+				indicators: true
+			});
+			$('#carouselTestemonials').carousel({
+				indicators: true,
+			});
+			$('#carouselHome').css({ "height": "100vh" });
+			$('#carouselAbout').carousel({
+				fullWidth: false,
+				indicators: true,
+			});
+			autoplay();
+			function autoplay() {
+				$('#carouselAbout').carousel('next');
+				setTimeout(autoplay, 3000);
+			};
+			$('.parallax').parallax();
+
+
+		});
+	</script>

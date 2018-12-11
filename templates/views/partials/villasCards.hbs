@@ -1,0 +1,29 @@
+<!-- section cards -->
+<section class="section container">
+    <div class="center-align blue-text title-header">
+        <i class="material-icons blue-text">filter_vintage</i>
+        <h3>Villas Theme</h3>
+        <h2>Our Villas</h2>
+    </div>
+
+
+    <!-- cards -->
+    <div class="row">
+        {{#each villas}}
+        <div class="col s12 l4">
+            <a href="{{villaUrl slug}}">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{{ cloudinaryUrl image width=400 height=400 }}}">
+                    </div>
+                    <div class="card-content grey-text">
+                        <h3 class="blue-text"> {{{title}}}</h3>
+                        <p>{{{shortDescription}}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+
+</section>

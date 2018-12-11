@@ -1,0 +1,87 @@
+<!-- hero -->
+<section class="section valign-wrapper hero hero-1">
+	<div class="center-align fullwidth white-text">
+		<h3> Villas Theme</h3>
+		<h1>Contact</h1>
+	</div>
+</section>
+
+
+<!-- section about us -->
+<section class="section container">
+	<div class="row">
+		<div class="col s12 l6">
+			<h2 class="blue-text">Villas Theme</h2>
+			<br>
+			<p class="grey-text text-darken-2"> Theme developed with Materialize. </p>
+			<p class="grey-text text-darken-2"> Prepared to integrate with Keystone CMS. Developed with Express js and
+				Handlebars in Node.js.</p>
+			<div class="contacts">
+				<i class="material-icons small blue-text">location_on</i>
+				<p>Address: Address street </p>
+				<i class="material-icons small blue-text">email</i>
+				<p>Email: email@email.com</p>
+				<i class="material-icons small blue-text">local_phone</i>
+				<p>Phone: 000 000 000</p>
+			</div>
+		</div>
+
+
+		<div class="col s12 l6">
+			<div class="contact-form z-depth-3">
+				<div class="center-align">
+					<h5 class="blue-text">Contact us</h5>
+					<p>WE DO REPLY QUICKLY</p>
+				</div>
+
+				{{#if enquirySubmitted}}
+				<h3>Thanks for getting in touch.</h3>
+				{{else}}
+				<form method="post">
+					<input type="hidden" name="action" value="contact">
+					<div class="input-field form-group {{#if validationErrors.name}}has-error{{/if}}">
+						<i class="material-icons prefix">person</i>
+						<input type="text" id="name" name="name.full" class="form-control" value="{{formData.[name.full]}}">
+						<label for="name">Name:</label>
+					</div>
+					<div class="input-field form-group {{#if validationErrors.email}}has-error{{/if}}">
+						<i class="material-icons prefix">email</i>
+						<input type="email" id="email" name="email" class="form-control" value="{{formData.email}}">
+						<label for="email">Email:</label>
+					</div>
+					<div class="input-field form-group">
+						<i class="material-icons prefix">local_phone</i>
+						<input type="text" name="phone" class="form-control" value="{{formData.phone}}">
+						<label for="phone">Phone:</label>
+					</div>
+					<div class="input-field form-group {{#if validationErrors.message}}has-error{{/if}} ">
+						<i class="material-icons prefix">message</i>
+						<textarea id="message" name="message" rows="4" class="materialize-textarea form-control">{{formData.message}}</textarea>
+						<label for="message">Message:</label>
+					</div>
+
+					<div class="input-field">
+						<p>
+							<label>
+								<input type="checkbox">
+								<span>I accept the privacy policy.</span>
+							</label>
+						</p>
+					</div>
+
+					<div class="form-actions input-field center">
+						<button type="submit" class="btn blue round">Send</button>
+					</div>
+				</form>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+
+
+
+<!-- section maps -->
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d158857.72810581757!2d-0.24168218097224953!3d51.52877184112049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2spt!4v1544396948519" width="100%" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>

@@ -1,17 +1,17 @@
 <!-- if galleries -->
 <div class="container ">
+
 	{{#if galleries}}
-	{{#each galleries}}
+	
 	<div class="row white z-depth-1">
 		{{#each images}}
 		<div class="col s6 m3 ">
-			<a href="{{cloudinaryUrl width=600}}"   data-lightbox="villa1">
+			<a href="{{cloudinaryUrl width=600}}"   data-lightbox="{{this.name}}">
 				<img src="{{cloudinaryUrl}}" class="responsive-img card">
 			</a>
 		</div>
 		{{/each}}
 	</div>
-	{{/each}}
 	{{else}}
 	<!-- else -->
 	<h3 class="text-muted">There are no image galleries yet.</h3>

@@ -15,8 +15,11 @@ Villa.add({
     subtitle: {type: String},
     shortDescription: {type: Types.Html, wysiwyg: true, height: 300},
     longDescription: {type: Types.Html, height: 600},
-	image: { type: Types.CloudinaryImage },
-    galleries: { type: Types.Relationship, ref: 'Gallery', many: false },
+    // mainFeatures:{type: Types.Relationship, ref: 'Features', many: true},
+
+    features: {type: Types.Relationship, ref: 'Features', many: true},
+    image: { type: Types.CloudinaryImage },
+    galleries: { type: Types.Relationship, ref: 'Gallery', many: false},
 
 });
 

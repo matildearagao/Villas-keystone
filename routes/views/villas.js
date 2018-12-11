@@ -8,13 +8,27 @@ exports = module.exports = function (req, res) {
 
 	// Init locals
 	locals.section = 'villas';
+	
 	locals.data = {
 		villas: [],
+		features: [],
+
 	};
 
-	
 
-	// Load the posts
+
+	// Load all features
+	view.on('init', function (next) {
+		keystone.list('Features').model.find().exec(function (err, results) {
+			locals.data.features = results;
+			console.log(features);
+
+		});
+	});
+
+
+
+	// Load other villas
 	view.query('villas', keystone.list('Villa').model.find());
 
 

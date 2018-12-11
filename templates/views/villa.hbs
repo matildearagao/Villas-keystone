@@ -1,48 +1,30 @@
-{{!< default}} 
+{{!< default}}
 
  <!-- hero -->
     <section class="section valign-wrapper hero hero-1">
         <div class="center-align fullwidth white-text">
-
             <h3> Villas Themes </h3>
             <h1>{{data.villa.title}}</h1>
-           
         </div>
     </section>
-
-   
-
-					
 
     <!-- villa detail -->
     <div class=" row center-align">
         <div class="col s10 offset-s1 m8 offset-m2 z-depth-1 box-info ">
-
+            {{#each data.villa.features}}
             <div class="col s12 m4 col-info valign-wrapper">
                 <div class="center-align fullwidth">
                     <i class="material-icons medium blue-text">filter_vintage</i>
-                    <div class="black-text title-info">feature 1</div>
-                    <div class="grey-text">feature description</div>
+                    <div class="black-text title-info">{{{features}}}</div>
+                    <div class="black-text title-info">{{{name}}}</div>
+                    <div class="black-text title-info">{{features}}</div>
+                    <div class="black-text title-info">{{name}}</div>
+                    <div class="grey-text">{{data.features.name}} f {{{ data.villa.features prefix="Posted in "}}}</div>
                 </div>
             </div>
-            <div class="col s12 m4 col-info valign-wrapper col-middle">
-                <div class="center-align fullwidth ">
-                    <i class="material-icons medium blue-text">filter_vintage</i>
-                    <div class="black-text title-info">feature 2</div>
-                    <div class="grey-text">feature description</div>
-                </div>
-            </div>
-            <div class="col s12 m4 col-info valign-wrapper">
-                <div class="center-align fullwidth">
-                    <i class="material-icons medium blue-text">filter_vintage</i>
-                    <div class="black-text title-info">feature 3</div>
-                    <div class="grey-text">feature description</div>
-                </div>
-            </div>
-
+            {{/each}}
         </div>
     </div>
-
 
     <section class="section container white z-depth-1 wrapper-container">
         <div class="row">
@@ -60,16 +42,9 @@
             </div>
             <div class="col s12 l3  offset-l1 blue features white-text">
                 <ul>
-                    <li>Feature One</li>
-                    <li>Feature Two</li>
-                    <li>Feature Three</li>
-                    <li>Feature Four</li>
-                    <li>Feature Five</li>
-                    <li>Feature Six</li>
-                    <li>Feature Seven</li>
-                    <li>Feature Eight</li>
-                    <li>Feature Nine</li>
-                    <li>Feature Ten</li>
+                    {{#each feature}}
+                    <li>{{feature}}</li>
+                    {{/each}}
                 </ul>
             </div>
         </div>
@@ -78,5 +53,5 @@
 
     {{> gallery}}
     {{> testemonials}}
-    {{!-- {{> villasCards}} --}}
-    {{> prefooter}} 
+    {{> villasCards}}
+    {{> prefooter}}

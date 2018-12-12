@@ -27,18 +27,18 @@ exports = module.exports = function (req, res) {
 	// Load other villas
 	view.query('villas', keystone.list('Villa').model.find());
 
+	//gallery
 	view.on('init', function (next) {
+		var q = keystone.list('Gallery').model.findOne().where().populate('images');
 
-			keystone.list('Gallery').model.findOne({ key: locals.filters.galleries }).exec(function (err, result) {
-				locals.data.galleries = result;
-				next(err);
-			});
-		
+		q.exec(function (err, result) {
+			locals.data.gallery = result;
+			next(err);
+		});
 	});
-	// 	view.query('galleries', keystone.list('Gallery').model.findOne({ name: 'villa1' }));
 
-	// features
-			view.query('features', keystone.list('Features').model.find());
+	// // features
+	// view.query('features', keystone.list('Feature').model.find().populate('images'));
 
 
 

@@ -17,11 +17,14 @@ Villa.add({
     longDescription: {type: Types.Html, height: 600},
     // mainFeatures:{type: Types.Relationship, ref: 'Features', many: true},
 
-    features: {type: Types.Relationship, ref: 'Features', many: true},
+    features: {type: Types.Relationship, ref: 'Feature', many: true},
     image: { type: Types.CloudinaryImage },
+    
     galleries: { type: Types.Relationship, ref: 'Gallery', many: false},
 
 });
+
+
 
 //register model
 Villa.register();

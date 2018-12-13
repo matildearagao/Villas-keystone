@@ -21,7 +21,7 @@ Villa.add({
     image: { type: Types.CloudinaryImage },
     
     galleries: { type: Types.Relationship, ref: 'Gallery', many: false},
-
+    
 });
 
 

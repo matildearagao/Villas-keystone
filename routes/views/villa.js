@@ -28,14 +28,18 @@ exports = module.exports = function (req, res) {
 	view.query('villas', keystone.list('Villa').model.find());
 
 	//gallery
-	view.on('init', function (next) {
-		var q = keystone.list('Gallery').model.findOne().where().populate('images');
+	// view.query('galleries', keystone.list('Gallery').model.findOne({name : 'villa1'}).populate('images'));
 
-		q.exec(function (err, result) {
-			locals.data.gallery = result;
-			next(err);
-		});
+	view.on('init', function (next) {
+        var q = keystone.list('Gallery').model.findOne().populate('images');
+
+        q.exec(function (err, result) {
+            locals.data.gallery = result;
+            next(err);
+        });
 	});
+	
+
 
 	// // features
 	// view.query('features', keystone.list('Feature').model.find().populate('images'));

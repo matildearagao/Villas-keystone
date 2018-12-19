@@ -5,7 +5,7 @@
 	<div class="row white z-depth-1">
 		{{#each images}}
 		<div class="col s6 m3 ">
-			<a href="{{cloudinaryUrl width=600}}"   data-lightbox="villa1">
+			<a href="{{cloudinaryUrl width=600}}" data-lightbox="{{this.name}}">
 				<img src="{{cloudinaryUrl}}" class="responsive-img card">
 			</a>
 		</div>

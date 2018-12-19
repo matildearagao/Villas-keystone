@@ -4,8 +4,9 @@ exports = module.exports = function (req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 
-	// view.query('galleries', keystone.list('Gallery').model.find().sort('sortOrder'));
-	// view.query('galleries', keystone.list('Gallery').model.findOne({ name: 'villa1' }));
+	view.query('galleries', keystone.list('Gallery').model.findOne({ name: 'villa1' }));
+
+
 
 
 	//set locals
@@ -29,14 +30,15 @@ exports = module.exports = function (req, res) {
 	});
 
 	// Load other villas
-	view.on('init', function (next) {
-		var q = keystone.list('Villa').model.find();
+	view.query('villas', keystone.list('Villa').model.find());
 
-		q.exec(function (err, result) {
-			locals.data.villas = result;
-			next(err);
-		});
-	});
+
+
+
+	// // features
+	// view.query('features', keystone.list('Feature').model.find().populate('images'));
+
+
 
 	//render view
 	view.render('villa');

@@ -18,13 +18,13 @@ exports = module.exports = function (req, res) {
 
 
 	// Load all features
-	view.on('init', function (next) {
-		keystone.list('Features').model.find().exec(function (err, results) {
-			locals.data.features = results;
-			console.log(features);
+	// view.on('init', function (next) {
+	// 	keystone.list('Features').model.find().exec(function (err, results) {
+	// 		locals.data.features = results;
+	// 		console.log(features);
 
-		});
-	});
+	// 	});
+	// });
 
 
 

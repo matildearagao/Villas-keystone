@@ -15,7 +15,7 @@ Gallery.add({
 	images: { type: Types.CloudinaryImages },
 	
 });
-Gallery.relationship({ ref: 'Villa', path: 'villas', refPath: 'galleries' });
+// Gallery.relationship({ ref: 'Villa', path: 'villas', refPath: 'galleries' });
 
 
 Gallery.register();
